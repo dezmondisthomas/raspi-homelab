@@ -3,7 +3,7 @@
 This repository provides modular Docker Compose setups for building a personal home server on a Raspberry Pi 5.  
 You can choose which phase you want to deploy and expand your homelab step-by-step.
 
----
+
 
 ## Structure
 
@@ -12,7 +12,7 @@ You can choose which phase you want to deploy and expand your homelab step-by-st
 - `phase3-devmedia/` - Developer and media stack (code-server, Stremio media server)
 - `shared/` - Environment variable templates
 
----
+
 
 ## Usage
 
@@ -39,7 +39,7 @@ docker compose up -d
 
 4. Repeat for other phases as you expand your setup.
 
----
+
 
 ## Notes
 
@@ -48,7 +48,7 @@ docker compose up -d
 - Pi-hole runs in host network mode to listen on ports 53 and 80.
 - Nextcloud is mapped to port 8080; adjust as needed.
 
----
+
 
 ## Future Plans
 
@@ -57,10 +57,10 @@ docker compose up -d
 - Extend to more media servers like Jellyfin, Plex
 - Secure with HTTPS & reverse proxy (e.g., Nginx Proxy Manager)
 
----
+
 
 Feel free to contribute or open issues!
 
----
 
-*Built by Thomas’s AI assistant.*
+
+*Built by Thomas.*
