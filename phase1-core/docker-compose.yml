@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  pihole:
+    container_name: pihole
+    image: pihole/pihole:latest
+    restart: unless-stopped
+    network_mode: host
+    environment:
+      TZ: "Asia/Hong_Kong"
+      WEBPASSWORD: "${PIHOLE_WEBPASSWORD}"
+    volumes:
+      - ./pihole/etc-pihole:/etc/pihole
+      - ./pihole/etc-dnsmasq.d:/etc/dnsmasq.d
+    cap_add:
+      - NET_ADMIN
+    dns:
+      - 127.0.0.1
+      - 1.1.1.1
+# NOTE:
+# Tailscale must be installed directly on the host OS, not in Docker.
+# Run 'sudo tailscale up --advertise-exit-node' to enable exit node feature.

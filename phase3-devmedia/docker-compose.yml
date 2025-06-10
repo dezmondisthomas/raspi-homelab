@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  code-server:
+    image: linuxserver/code-server
+    restart: unless-stopped
+    ports:
+      - 8443:8443
+    environment:
+      PUID: 1000
+      PGID: 1000
+      TZ: "Asia/Hong_Kong"
+    volumes:
+      - code-server-data:/config
+
+  stremio:
+    image: stremio/stremio-server
+    restart: unless-stopped
+    ports:
+      - 11470:11470
+    volumes:
+      - stremio-data:/root/.stremio
+
+volumes:
+  code-server-data:
+  stremio-data:
